@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Dicoding Pemula</string>
+    <string name="club_name">Club Name</string>
+    <string name="club_info">Club Info</string>
+
+    <string-array name="arr_club_name">
+        <item>Manchester United</item>
+        <item>Aston Villa</item>
+        <item>Arsenal</item>
+        <item>Wolverhampton Wanderer</item>
+        <item>Manchester City</item>
+    </string-array>
+
+    <string-array name="arr_club_info">
+        <item>Manchester United Football Club, commonly referred to as Man United (often stylised as Man Utd) or simply United, is a professional football club based in Old Trafford, Greater Manchester, England. They compete in the Premier League, the top tier of English football. Nicknamed the Red Devils, they were founded as Newton Heath LYR Football Club in 1878, but changed their name to Manchester United in 1902. After a spell playing in Clayton, Manchester, the club moved to their current stadium, Old Trafford, in 1910. Domestically, Manchester United have won a joint-record twenty top-flight league titles, thirteen FA Cups, six League Cups and a record twenty-one FA Community Shields. Additionally, in international football, they have won the European Cup/UEFA Champions League three times, and the UEFA Europa League, the UEFA Cup Winners\' Cup, the UEFA Super Cup, the Intercontinental Cup and the FIFA Club World Cup once each.></item>
+        <item>Aston Villa Football Club (commonly referred to as simply Villa) is a professional football club based in Aston, Birmingham, England. It was founded in 1874. Its team compete in the Premier League, the top tier of English football, and have played at their home ground, Villa Park, since 1897. Aston Villa is one of the oldest and most successful clubs in England, having won the Football League First Division seven times, the FA Cup seven times, the League Cup five times, and the European Cup and European Super Cup once.></item>
+        <item>The Arsenal Football Club is a professional football club based in Islington, North London, England. They compete in the Premier League, the top tier of English football. In domestic football, Arsenal have won 13 league titles (including one unbeaten title), a record 14 FA Cups, 2 League Cups, 17 FA Community Shields and a Football League Centenary Trophy. In European football, they have won one European Cup Winners\' Cup and one Inter-Cities Fairs Cup. In terms of trophies won, it is the third-most successful club in English football.></item>
+        <item>Wolverhampton Wanderers Football Club, commonly referred to as Wolves, is a professional football club based in Wolverhampton, England. The club competes in the Premier League, the top tier of English football. The club has played at Molineux Stadium since moving from Dudley Road in 1889. The club\'s traditional kit consists of old gold shirts and socks with black shorts. Since 1979, the kit has also featured the club\'s "wolf's head" logo. Long-standing rivalries exist with other clubs from the West Midlands, including Aston Villa, Stoke City, and Birmingham City but the main one being the Black Country derby contested with West Bromwich Albion. Since 2016, the club has been owned by the Chinese conglomerate Fosun International.></item>
+        <item><![CDATA[Manchester City Football Club is a professional football club based in Manchester, England, that competes in the Premier League, the top flight of English football. Founded in 1880 as St. Mark&apos;s (West Gorton), they became Ardwick Association Football Club in 1887 and Manchester City in 1894. The club&apos;s home ground is the City of Manchester Stadium in east Manchester, to which they moved in 2003, having played at Maine Road since 1923. Manchester City adopted their sky blue home shirts in 1894, the first season with the current name. The club is one of the most successful in English football, having won ten league titles, seven FA Cups, eight League Cups, seven FA Community Shields, one UEFA Champions League, one European Cup Winner&apos;s Cup, one UEFA Super Cup and one FIFA Club World Cup.]]></item>
+    </string-array>
+
+    <integer-array name="arr_club_logo">
+        <item>@drawable/mu</item>
+        <item>@drawable/aston_villa</item>
+        <item>@drawable/arsenal</item>
+        <item>@drawable/wolves</item>
+        <item>@drawable/mcity</item>
+    </integer-array>
+</resources>
