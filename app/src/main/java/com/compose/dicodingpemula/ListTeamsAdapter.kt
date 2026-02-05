@@ -9,6 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ListTeamsAdapter (private val listTeam: ArrayList<Teams>) : RecyclerView.Adapter<ListTeamsAdapter.ListViewHolder>() {
 
+  private lateinit var onItemClickCallback: OnItemClickCallback
+
+  fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+    this.onItemClickCallback = onItemClickCallback
+  }
+
+
   override fun onCreateViewHolder(
     parent: ViewGroup,
     viewType: Int
@@ -22,6 +29,9 @@ class ListTeamsAdapter (private val listTeam: ArrayList<Teams>) : RecyclerView.A
     holder.imgLogo.setImageResource(logo)
     holder.tvName.text = name
     holder.tvInfo.text = info
+    holder.itemView.setOnClickListener {
+      onItemClickCallback.onItemClicked(listTeam[holder.adapterPosition])
+    }
   }
 
   override fun getItemCount(): Int = listTeam.size
@@ -31,4 +41,9 @@ class ListTeamsAdapter (private val listTeam: ArrayList<Teams>) : RecyclerView.A
     val tvName: TextView = itemView.findViewById(R.id.tv_item_name)
     val tvInfo: TextView = itemView.findViewById(R.id.tv_item_info)
   }
+
+  interface OnItemClickCallback {
+    fun onItemClicked(data: Teams)
+  }
+
 }

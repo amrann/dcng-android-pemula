@@ -2,6 +2,8 @@
     <string name="app_name">Dicoding Pemula</string>
     <string name="club_name">Club Name</string>
     <string name="club_info">Club Info</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
 
     <string-array name="arr_club_name">
         <item>Manchester United</item>

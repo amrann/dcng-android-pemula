@@ -2,6 +2,8 @@ package com.compose.dicodingpemula
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.Menu
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -30,6 +32,11 @@ class MainActivity : AppCompatActivity() {
     showRecyclerList()
   }
 
+  override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.menu_main, menu)
+    return super.onCreateOptionsMenu(menu)
+  }
+
   @SuppressLint("Recycle")
   private fun getListTeams(): ArrayList<Teams> {
     val dataName = resources.getStringArray(R.array.arr_club_name)
@@ -47,5 +54,15 @@ class MainActivity : AppCompatActivity() {
     rvTeams.layoutManager = LinearLayoutManager(this)
     val listTeamAdapter = ListTeamsAdapter(list)
     rvTeams.adapter = listTeamAdapter
+
+    listTeamAdapter.setOnItemClickCallback(object : ListTeamsAdapter.OnItemClickCallback {
+      override fun onItemClicked(data: Teams) {
+        showSelectedTeam(data)
+      }
+    })
+  }
+
+  private fun showSelectedTeam(team: Teams) {
+    Toast.makeText(this, "Kamu memilih " + team.name, Toast.LENGTH_SHORT).show()
   }
 }
