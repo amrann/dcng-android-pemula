@@ -1,11 +1,11 @@
 package com.compose.dicodingpemula
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.compose.dicodingpemula.databinding.ItemRowTeamBinding
 
 class ListTeamsAdapter (private val listTeam: ArrayList<Teams>) : RecyclerView.Adapter<ListTeamsAdapter.ListViewHolder>() {
 
@@ -20,8 +20,8 @@ class ListTeamsAdapter (private val listTeam: ArrayList<Teams>) : RecyclerView.A
     parent: ViewGroup,
     viewType: Int
   ): ListViewHolder {
-    val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_team, parent, false)
-    return ListViewHolder(view)
+    val binding = ItemRowTeamBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    return ListViewHolder(binding)
   }
 
   override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
@@ -36,10 +36,10 @@ class ListTeamsAdapter (private val listTeam: ArrayList<Teams>) : RecyclerView.A
 
   override fun getItemCount(): Int = listTeam.size
 
-  class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val imgLogo: ImageView = itemView.findViewById(R.id.img_item_logo)
-    val tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-    val tvInfo: TextView = itemView.findViewById(R.id.tv_item_info)
+  class ListViewHolder(binding: ItemRowTeamBinding) : RecyclerView.ViewHolder(binding.root) {
+    val imgLogo: ImageView = binding.imgItemLogo
+    val tvName: TextView = binding.tvItemName
+    val tvInfo: TextView = binding.tvItemInfo
   }
 
   interface OnItemClickCallback {
