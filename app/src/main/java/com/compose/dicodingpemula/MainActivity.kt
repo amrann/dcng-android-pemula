@@ -1,6 +1,7 @@
 package com.compose.dicodingpemula
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
@@ -67,5 +68,8 @@ class MainActivity : AppCompatActivity() {
 
   private fun showSelectedTeam(team: Teams) {
     Toast.makeText(this, "Kamu memilih " + team.name, Toast.LENGTH_SHORT).show()
+    val moveIntent = Intent(this@MainActivity, DetailActivity::class.java)
+    moveIntent.putExtra(DetailActivity.EXTRA_DATA)
+//    startActivity(moveIntent)
   }
 }
