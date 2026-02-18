@@ -1,10 +1,8 @@
 package com.compose.dicodingpemula
 
+import android.os.Build
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.compose.dicodingpemula.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -17,13 +15,23 @@ class DetailActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    enableEdgeToEdge()
     bindingDetail = ActivityDetailBinding.inflate(layoutInflater)
     setContentView(bindingDetail.root)
-    ViewCompat.setOnApplyWindowInsetsListener(bindingDetail.main) { v, insets ->
-      val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-      v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-      insets
+
+    supportActionBar?.elevation = 0f
+    supportActionBar?.setHomeButtonEnabled(true)
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+    val dataShare = if (Build.VERSION.SDK_INT >= 33) {
+      intent.getParcelableExtra(EXTRA_DATA, Teams::class.java)
+    } else {
+      @Suppress("DEPRECATION")
+      intent.getParcelableExtra(EXTRA_DATA)
+    }
+    if (dataShare != null) {
+      bindingDetail.txtTitle.text = dataShare.name
+      bindingDetail.txtDesc.text = dataShare.info
+      bindingDetail.imgLogo.setImageResource(dataShare.logo)
     }
   }
 }

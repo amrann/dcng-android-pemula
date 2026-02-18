@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.widget.Toast
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -67,9 +67,17 @@ class MainActivity : AppCompatActivity() {
   }
 
   private fun showSelectedTeam(team: Teams) {
-    Toast.makeText(this, "Kamu memilih " + team.name, Toast.LENGTH_SHORT).show()
     val moveIntent = Intent(this@MainActivity, DetailActivity::class.java)
-    moveIntent.putExtra(DetailActivity.EXTRA_DATA)
-//    startActivity(moveIntent)
+    moveIntent.putExtra(DetailActivity.EXTRA_DATA, team)
+    startActivity(moveIntent)
+  }
+
+  override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    when (item.itemId) {
+      R.id.action_about -> {
+        startActivity(Intent(this, AboutActivity::class.java))
+      }
+    }
+    return super.onOptionsItemSelected(item)
   }
 }
